@@ -1,4 +1,4 @@
-pip install git+https://github.com/thinh-vu/vnstock.git@beta
+!pip install git+https://github.com/thinh-vu/vnstock.git@beta
 # Cài đặt thư viện
 import streamlit as st
 import pandas as pd
