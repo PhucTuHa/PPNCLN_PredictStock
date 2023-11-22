@@ -1,4 +1,4 @@
-
+!pip install vnstock
 # Cài đặt thư viện
 import streamlit as st
 import pandas as pd
