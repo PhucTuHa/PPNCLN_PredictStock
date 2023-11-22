@@ -1,7 +1,4 @@
-
-git clone https://github.com/thinh-vu/vnstock.git@beta
-cd vnstock
-python run.py install
+pip install -r requirements.txt
 # Cài đặt thư viện
 import streamlit as st
 import pandas as pd
