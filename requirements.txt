@@ -5,6 +5,5 @@ matplotlib
 scikit-learn
 keras
 tensorflow
-pandas==1.4.1
 numpy
 arrow
