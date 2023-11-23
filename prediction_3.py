@@ -250,7 +250,7 @@ kq['KNN'] = predictions2[0]
 kq['SVM'] = predictions3[0]
 # Vẽ kết hợp trước và lúc dự đoán
 data_noi = data_stock[:len(data_stock) - len(predictions1[0])]
-kq = data_noi.append(kq)
+kq = pd.concat([data_noi, kq])
 # kq = kq.set_index('time')
 # Biểu đồ so sánh dự đoán của các mô hình với giá thực tế
 plt.figure(figsize=(14, 5))
