@@ -5,5 +5,5 @@ matplotlib
 scikit-learn
 keras
 tensorflow
-tensorboard = 2.15.1
-protobuf<4.24,>=3.19.6
+tensorboard == 2.15.1
+protobuf<4.24,>==3.19.6
