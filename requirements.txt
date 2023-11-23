@@ -2,3 +2,4 @@ vnstock
 plotly
 beautifulsoup4
 matplotlib
+sklearn 
