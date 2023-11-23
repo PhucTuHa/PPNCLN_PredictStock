@@ -3,4 +3,5 @@ plotly
 beautifulsoup4
 matplotlib
 scikit-learn
-keras.models
+keras
+tensorflow
