@@ -9,3 +9,4 @@ tensorboard == 2.15.1
 protobuf<4.24,>==3.19.6
 pandas 
 numpy
+streamlit==0.84.2
