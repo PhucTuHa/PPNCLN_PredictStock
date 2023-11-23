@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# %%writefile app.py
 # Cài đặt thư viện
 import streamlit as st
 import pandas as pd
@@ -92,35 +88,35 @@ st.write(f"Biểu đồ so sánh giá đóng cửa giữa mã {ticker} và {tick
 st.pyplot(plt)
 
 
-# #Biểu đồ cột
-# data_stock_close = vnstock.stock_historical_data(ticker,'2022-11-06','2023-11-06','1D')[['close', 'time']]
-# data_stock_close['year'] = data_stock_close['time'].apply(lambda x: str(x.month) +'/'+ str(x.year))
-# data_theo_thang = data_stock_close.groupby('year').mean().astype('int').round()
-# #Biểu đồ thể hiện giá đóng cửa trung bình của tháng
-# plt.figure(figsize=(15,6))
-# plt.bar(data_theo_thang.index, data_theo_thang['close'] , color = 'red',width = 0.5)
-# plt.title('Biểu đồ giá đóng cửa')
-# plt.xlabel('Ngày')
-# plt.ylabel('Giá cao nhất')
-# plt.xticks(rotation=0)
-# plt.yticks(rotation=0)
-# # Chuyển đổi từ list sang array
-# xs =  np.array(list(data_theo_thang.index))
-# ys =  np.array(list(data_theo_thang['close']))
-# for x,y in zip(xs,ys):
+#Biểu đồ cột
+data_stock_close = vnstock.stock_historical_data(ticker,'2022-11-06','2023-11-06','1D')[['close', 'time']]
+data_stock_close['year'] = data_stock_close['time'].apply(lambda x: str(x.month) +'/'+ str(x.year))
+data_theo_thang = data_stock_close.groupby('year').mean().astype('int').round()
+#Biểu đồ thể hiện giá đóng cửa trung bình của tháng
+plt.figure(figsize=(15,6))
+plt.bar(data_theo_thang.index, data_theo_thang['close'] , color = 'red',width = 0.5)
+plt.title('Biểu đồ giá đóng cửa')
+plt.xlabel('Ngày')
+plt.ylabel('Giá cao nhất')
+plt.xticks(rotation=0)
+plt.yticks(rotation=0)
+# Chuyển đổi từ list sang array
+xs =  np.array(list(data_theo_thang.index))
+ys =  np.array(list(data_theo_thang['close']))
+for x,y in zip(xs,ys):
 
-#     label = "{:}".format(y)
+    label = "{:}".format(y)
 
-#     plt.annotate(label,
-#                  (x,y),
-#                  textcoords="offset points",
-#                  xytext=(0,10),
-#                  ha='center')
+    plt.annotate(label,
+                 (x,y),
+                 textcoords="offset points",
+                 xytext=(0,10),
+                 ha='center')
 
-# plt.show()
-# #--------- Hiển thị
-# st.title("Biểu đồ giá đóng cửa")
-# st.pyplot(plt)
+plt.show()
+#--------- Hiển thị
+st.title("Biểu đồ giá đóng cửa")
+st.pyplot(plt)
 # --------------------------------------------------------------------------------
 # Xử lý dữ liệu trước khi train model
 import math
@@ -300,4 +296,3 @@ bang_danh_gia = pd.DataFrame([['Linear Regression',gia_trung_binh_test, rmse1, m
              columns = ['Model', 'Giá trung bình', 'RMSE', 'MAE', 'MAPE'])
 st.title("Đánh giá các mô hình AI")
 st.dataframe(bang_danh_gia.style.background_gradient(cmap ='RdYlBu').set_properties(**{'font-size': '20px'}))
-
