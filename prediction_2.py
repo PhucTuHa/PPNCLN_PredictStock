@@ -90,7 +90,7 @@ st.pyplot(plt)
 
 #Biểu đồ cột
 data_stock_close = vnstock.stock_historical_data(ticker,'2022-11-06','2023-11-06','1D')[['close', 'time']]
-data_stock_close['year'] = data_stock_close['time'].apply(lambda x: str(x.month) +'/'+ str(x.year))
+data_stock_close['year'] = data_stock_close['time'].agg(lambda x: str(x.month) +'/'+ str(x.year))
 data_theo_thang = data_stock_close.groupby('year').mean().astype('int').round()
 #Biểu đồ thể hiện giá đóng cửa trung bình của tháng
 plt.figure(figsize=(15,6))
