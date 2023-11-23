@@ -8,7 +8,7 @@ import plotly.express as px
 import numpy as np
 # Title
 st.title("Prediction Stock VietNam")
-ticker = st.sidebar.text_input('Mã chứng khoán 1', key = 1)
+ticker = st.sidebar.text_input('Mã chứng khoán 1', 1)
 start_date = st.sidebar.date_input('Ngày bắt đầu', key = 2)
 end_date = st.sidebar.date_input('Ngày kết thúc', key = 3)
 ticker1 = st.sidebar.text_input('Mã chứng khoán 2',key = 4)
