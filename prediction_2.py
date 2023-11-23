@@ -9,9 +9,9 @@ import numpy as np
 # Title
 st.title("Prediction Stock VietNam")
 ticker = st.sidebar.text_input('Mã chứng khoán 1', 1)
-start_date = st.sidebar.date_input('Ngày bắt đầu', key = 2)
-end_date = st.sidebar.date_input('Ngày kết thúc', key = 3)
-ticker1 = st.sidebar.text_input('Mã chứng khoán 2',key = 4)
+start_date = st.sidebar.date_input('Ngày bắt đầu', 2)
+end_date = st.sidebar.date_input('Ngày kết thúc', 3)
+ticker1 = st.sidebar.text_input('Mã chứng khoán 2',4)
 
 # Hiển thị dữ liệu lấy về của mã chứng khoán 1
 try:
